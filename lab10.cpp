@@ -73,4 +73,18 @@ double gRec(unsigned i) {
 
 double gStack(unsigned i) {
     // TODO
+    ArrayStack<double> gStack(i+1);
+    gStack.push(3.2);
+    
+    for(int n = 0; n < i; n++) {
+        gStack.push(1.1);
+    }
+
+    double sum = 0;
+
+    while(!gStack.isEmpty()) {
+        sum += gStack.peek();
+        gStack.pop();
+    }
+    return sum;
 }
